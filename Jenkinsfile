@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('SCM code') {
             steps {
-                git 'https://github.com/hellokaton/java11-examples.git'
+                git 'https://github.com/Bushra995/SpringSecurityLatest.git'
             }
         }
         stage('Build') {
