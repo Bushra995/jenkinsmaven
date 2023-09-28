@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     parameters {
         choice(
             name: 'ENVIRONMENT',
@@ -13,7 +12,6 @@ pipeline {
             description: 'Select the priority'
         )
     }
-
     stages {
         stage('SCM code') {
             steps {
@@ -23,6 +21,13 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
+                
+            }
+        }
+        stage('Test') {
+            steps{
+                sh 'mvn test'
+                
             }
         }
         stage('Publish High Priority') {
