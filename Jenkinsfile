@@ -33,7 +33,7 @@ pipeline {
         // Navigate into the project directory
      
             // Run Maven commands in the project directory
-            sh 'mvn Test'
+            sh 'mvn test'
     
     }
 }
