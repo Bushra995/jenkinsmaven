@@ -18,27 +18,25 @@ pipeline {
                 git 'https://github.com/Bushra995/Hospital-Claim-Management-System.git'
             }
         }
-        stage('Build') {
-            steps {
-                                // Navigate into the project directory
-                dir('hospital_claim_management_system') {
-                    // Run Maven commands in the project directory
-                    sh 'mvn clean package'
-                }
-
-            }
+ stage('Build') {
+    steps {
+        // Navigate into the project directory
+        dir('hospital_claim_management_system') {
+            // Run Maven commands in the project directory
+            sh 'mvn clean package'
         }
-        stage('Test') {
-            steps{
-                        // Navigate into the project directory
-                dir('hospital_claim_management_system') {
-                    // Run Maven commands in the project directory
-                    sh 'mvn test'
-                }
+    }
+}
 
-                
-            }
+    stage('Test') {
+    steps {
+        // Navigate into the project directory
+        dir('hospital_claim_management_system') {
+            // Run Maven commands in the project directory
+            sh 'mvn Test'
         }
+    }
+}
         stage('Publish High Priority') {
             when {
                 expression { params.ENVIRONMENT == 'prod' && params.PRIORITY == 'high' }
