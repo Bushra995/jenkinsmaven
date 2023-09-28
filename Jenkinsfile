@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('SCM code') {
             steps {
-                git 'https://github.com/Bushra995/SpringSecurityLatest.git'
+                git 'https://github.com/Bushra995/Hospital-Claim-Management-System.git'
             }
         }
         stage('Build') {
