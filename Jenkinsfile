@@ -20,13 +20,22 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
-                
+                                // Navigate into the project directory
+                dir('hospital_claim_management_system') {
+                    // Run Maven commands in the project directory
+                    sh 'mvn clean package'
+                }
+
             }
         }
         stage('Test') {
             steps{
-                sh 'mvn test'
+                        // Navigate into the project directory
+                dir('hospital_claim_management_system') {
+                    // Run Maven commands in the project directory
+                    sh 'mvn test'
+                }
+
                 
             }
         }
