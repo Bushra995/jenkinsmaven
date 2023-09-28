@@ -15,26 +15,26 @@ pipeline {
     stages {
         stage('SCM code') {
             steps {
-                git 'https://github.com/Bushra995/Hospital-Claim-Management-System.git'
+                git 'https://github.com/hellokaton/java11-examples.git'
             }
         }
  stage('Build') {
     steps {
         // Navigate into the project directory
-        dir('hospital_claim_management_system') {
+        
             // Run Maven commands in the project directory
             sh 'mvn clean package'
-        }
+       
     }
 }
 
     stage('Test') {
     steps {
         // Navigate into the project directory
-        dir('hospital_claim_management_system') {
+     
             // Run Maven commands in the project directory
             sh 'mvn Test'
-        }
+    
     }
 }
         stage('Publish High Priority') {
